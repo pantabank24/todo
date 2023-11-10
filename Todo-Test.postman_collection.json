@@ -1,0 +1,487 @@
+{
+	"info": {
+		"_postman_id": "a8626cb0-33a9-4c8b-b680-a5b01382463c",
+		"name": "Todo-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27906866"
+	},
+	"item": [
+		{
+			"name": "TodoList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/v1/todos?order=title&orderBy=desc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"todos"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "title",
+							"description": "title, status, created_at (optional)"
+						},
+						{
+							"key": "orderBy",
+							"value": "desc",
+							"description": "asc, desc (optional)"
+						},
+						{
+							"key": "search",
+							"value": "bank",
+							"description": "find a title or description (optional)",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 : OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos?order=title&orderBy=desc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "title",
+									"description": "title, status, created_at (optional)"
+								},
+								{
+									"key": "orderBy",
+									"value": "desc",
+									"description": "asc, desc (optional)"
+								},
+								{
+									"key": "search",
+									"value": "bank",
+									"description": "find a title or description (optional)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"result\": [\r\n        {\r\n            \"id\": \"176b13c3-d517-476f-b909-26b34fec4986\",\r\n            \"title\": \"example2\",\r\n            \"description\": \"lorem ipsum\",\r\n            \"created_at\": \"2023-11-10T04:49:16.9619446+07:00\",\r\n            \"updated_at\": \"2023-11-10T04:49:16.9619446+07:00\",\r\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\r\n            \"status\": \"IN_PROGRESS\"\r\n        },\r\n        {\r\n            \"id\": \"06de4765-cb99-4413-8ec4-55e1a701e8d4\",\r\n            \"title\": \"example1\",\r\n            \"description\": \"lorem ipsum\",\r\n            \"created_at\": \"2023-11-10T04:49:05.6975718+07:00\",\r\n            \"updated_at\": \"2023-11-10T04:49:05.6975718+07:00\",\r\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\r\n            \"status\": \"IN_PROGRESS\"\r\n        }\r\n    ],\r\n    \"status\": \"OK\",\r\n    \"status_code\": 200\r\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateTodo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"example2\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"image\": \"https://image.com/001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/v1/todos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"todos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 : OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"example2\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"image\": \"https://image.com/001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": [\n        {\n            \"id\": \"176b13c3-d517-476f-b909-26b34fec4986\",\n            \"title\": \"example2\",\n            \"description\": \"lorem ipsum\",\n            \"created_at\": \"2023-11-10T04:49:16.9619446+07:00\",\n            \"updated_at\": \"2023-11-10T04:49:16.9619446+07:00\",\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\n            \"status\": \"IN_PROGRESS\"\n        },\n        {\n            \"id\": \"06de4765-cb99-4413-8ec4-55e1a701e8d4\",\n            \"title\": \"example1\",\n            \"description\": \"lorem ipsum\",\n            \"created_at\": \"2023-11-10T04:49:05.6975718+07:00\",\n            \"updated_at\": \"2023-11-10T04:49:05.6975718+07:00\",\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\n            \"status\": \"IN_PROGRESS\"\n        }\n    ],\n    \"status\": \"OK\",\n    \"status_code\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateCompleteStatus",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/v1/todos/176b13c3-d517-476f-b909-26b34fec4986/completed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"todos",
+						"176b13c3-d517-476f-b909-26b34fec4986",
+						"completed"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "500 : wrong id",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos/61aa83d0-16db-4287-89b6-14ac275eea05/completed",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos",
+								"61aa83d0-16db-4287-89b6-14ac275eea05",
+								"completed"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"result\": \"error: id not found : 61aa83d0-16db-4287-89b6-14ac275eea05\",\r\n    \"status\": \"Internal Server Error\",\r\n    \"status_code\": 500\r\n}"
+				},
+				{
+					"name": "200 : OK",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos/61aa83d0-16db-4287-89b6-14ac275eea05/completed",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos",
+								"61aa83d0-16db-4287-89b6-14ac275eea05",
+								"completed"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"result\": [\r\n        {\r\n            \"id\": \"176b13c3-d517-476f-b909-26b34fec4986\",\r\n            \"title\": \"example2\",\r\n            \"description\": \"lorem ipsum\",\r\n            \"created_at\": \"2023-11-10T04:49:16.9619446+07:00\",\r\n            \"updated_at\": \"2023-11-10T04:51:18.1261931+07:00\",\r\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\r\n            \"status\": \"COMPLETED\"\r\n        },\r\n        {\r\n            \"id\": \"06de4765-cb99-4413-8ec4-55e1a701e8d4\",\r\n            \"title\": \"example1\",\r\n            \"description\": \"lorem ipsum\",\r\n            \"created_at\": \"2023-11-10T04:49:05.6975718+07:00\",\r\n            \"updated_at\": \"2023-11-10T04:49:05.6975718+07:00\",\r\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\r\n            \"status\": \"IN_PROGRESS\"\r\n        }\r\n    ],\r\n    \"status\": \"OK\",\r\n    \"status_code\": 200\r\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateTodo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"todo-test\",\r\n    \"description\": \"golang\",\r\n    \"image\": \"https://image.com/007\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/v1/todos/61aa83d0-16db-4287-89b6-14ac275eea05",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"todos",
+						"61aa83d0-16db-4287-89b6-14ac275eea05"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "500 : wrong id",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"todo-test\",\r\n    \"description\": \"golang\",\r\n    \"image\": \"https://image.com/007\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos/61aa83d0-16db-4287-89b6-14ac275eea05",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos",
+								"61aa83d0-16db-4287-89b6-14ac275eea05"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"result\": \"error: id not found : 61aa83d0-16db-4287-89b6-14ac275eea05\",\r\n    \"status\": \"Internal Server Error\",\r\n    \"status_code\": 500\r\n}"
+				},
+				{
+					"name": "200 : OK",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"todo-test\",\r\n    \"description\": \"golang\",\r\n    \"image\": \"https://image.com/007\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos/61aa83d0-16db-4287-89b6-14ac275eea05",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos",
+								"61aa83d0-16db-4287-89b6-14ac275eea05"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "DeleteTodo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/v1/todos/e1e6bdf5-40c8-414c-919d-d99dc95dd76b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"todos",
+						"e1e6bdf5-40c8-414c-919d-d99dc95dd76b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "500 : wrong id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos/c9bde4ce-e08a-4bbf-94f9-e115c6d13736",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos",
+								"c9bde4ce-e08a-4bbf-94f9-e115c6d13736"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": \"error: id not found : c9bde4ce-e08a-4bbf-94f9-e115c6d13736\",\n    \"status\": \"Internal Server Error\",\n    \"status_code\": 500\n}"
+				},
+				{
+					"name": "200 : OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/v1/todos/c9bde4ce-e08a-4bbf-94f9-e115c6d13736",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"todos",
+								"c9bde4ce-e08a-4bbf-94f9-e115c6d13736"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": [\n        {\n            \"id\": \"176b13c3-d517-476f-b909-26b34fec4986\",\n            \"title\": \"example2\",\n            \"description\": \"lorem ipsum\",\n            \"created_at\": \"2023-11-10T04:49:16.9619446+07:00\",\n            \"updated_at\": \"2023-11-10T04:51:18.1261931+07:00\",\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\n            \"status\": \"COMPLETED\"\n        },\n        {\n            \"id\": \"06de4765-cb99-4413-8ec4-55e1a701e8d4\",\n            \"title\": \"example1\",\n            \"description\": \"lorem ipsum\",\n            \"created_at\": \"2023-11-10T04:49:05.6975718+07:00\",\n            \"updated_at\": \"2023-11-10T04:49:05.6975718+07:00\",\n            \"image\": \"aHR0cHM6Ly9pbWFnZS5jb20vMDAx\",\n            \"status\": \"IN_PROGRESS\"\n        }\n    ],\n    \"status\": \"OK\",\n    \"status_code\": 200\n}"
+				}
+			]
+		}
+	]
+}
